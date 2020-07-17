@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import './card.css'
+
 
 function Card(props){
 
@@ -11,9 +11,6 @@ function Card(props){
     return(
         <div className="card w-100">
             <div className="card-body">
-                <button onClick={() => props.deleteCard(props.columnIndex, props.cardIndex)}>
-                    X
-                </button>
                 <h5 className="card-title">{getCardFromColumn().header}</h5>
                 <p className="card-text">{getCardFromColumn().body}</p>
                 {JSON.stringify(getCardFromColumn(), null, 2)}

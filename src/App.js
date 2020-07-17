@@ -3,6 +3,8 @@ import './App.css';
 import Screen from './components/Screen'
 import store from './services/redux/store'
 import {Provider} from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App(props) {
   return (

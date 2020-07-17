@@ -8,7 +8,7 @@ function Column(props){
             <div className="column-title">
                 {props.state[props.index].title}
             </div>
-            {props.state[props.index].cards.map((card, index) => <Card columnIndex={props.index} cardIndex={index} />)}
+            {props.state[props.index].cards.map((card, index) => <Card key={index} columnIndex={props.index} cardIndex={index} />)}
 
             
          </div>

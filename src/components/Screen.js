@@ -1,16 +1,29 @@
 import React from 'react'
 import Column from './column'
 import {connect} from 'react-redux'
+import SideBar from './SideBar'
+import {Container, Row, Col} from 'react-bootstrap'
 
 
 function Screen(props){
     return (
         <div className="App">
-            <div className="container">
-            <div className="row">
-                {props.state.map((column, index) => <Column index={index} column={column}/>)}
-            </div>
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col xs={2} id="sidebar-wrapper">      
+                      <SideBar />
+                    </Col>
+                    <Col  xs={10} id="page-content-wrapper">
+                    <div className="container">
+                        <div className="row">
+                            {props.state.map((column, index) => <Column index={index} key={index} column={column}/>)}
+                        </div>
+                    </div>
+                    </Col> 
+                </Row>
+            </Container>
+
+            
         </div>
     )
 }

@@ -27,7 +27,7 @@ function DeleteColumnModal(props) {
             <Form.Group>
                 <Form.Control as="select" size="lg" onChange={handleChange}>
                     <option>-</option>
-                    {props.state.map(element => <option>{element.title}</option>)}
+                    {props.state.map((element, index) => <option key={index}>{element.title}</option>)}
                 </Form.Control>
             </Form.Group>
             <Button variant="danger" onClick={()=>{props.deletecolumn(columnName); props.onHide()}}>Delete Column</Button>

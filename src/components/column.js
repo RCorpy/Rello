@@ -28,8 +28,9 @@ function Column(props){
                             setModifyCardModalShow(true)
                             }
                         }
+                        key={index}
                     >
-                        <Card key={index} columnIndex={props.index} cardIndex={index}  />
+                        <Card  columnIndex={props.index} cardIndex={index}  />
                     </div>)}
             </div>
             <div className="bottomTag" onClick={()=>setCreateModalShow(true)}>Añadir tarjeta +</div>
@@ -41,8 +42,8 @@ function Column(props){
             <ModifyCardModal
                 show={modifyCardModalShow}
                 onHide={() => setModifyCardModalShow(false)}
-                columnIndex={props.index}
-                cardIndex={indexForCardmodal}
+                columnindex={props.index}
+                cardindex={indexForCardmodal}
             />
          </div>
     )

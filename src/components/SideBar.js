@@ -1,38 +1,60 @@
-import React from "react";
-import {Nav, DropdownButton, Dropdown} from "react-bootstrap";
+import React, {useState} from "react";
+import {Nav} from "react-bootstrap";
 import './SideBar.css'
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutModal from './AboutModal'
+import ChangeBackgroundModal from './ChangeBackgroundModal'
+import SearchCardModal from './SearchCardModal'
+import CreateColumModal from './CreateColumnModal'
+import DeleteColumnModal from './DeleteColumnModal'
 
 
 const Sidebar = props => {
 
+    const [aboutModalShow, setAboutModalShow] = useState(false);
+    const [changeBackgroundModalShow, setChangeBackgroundModalShow] = useState(false);
+    const [searchCardModalShow, setSearchCardModalShow] = useState(false);
+    const [createColumShow, setCreateColumShow] = useState(false);
+    const [deleteColumShow, setDeleteColumShow] = useState(false);
 
     return (
         <>
 
-            <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-            activeKey="/home"
-            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-            >
+            <Nav className="col-md-12 d-none d-md-block bg-light sidebar">
                 <div className="sidebar-sticky"></div>
             <Nav.Item>
-                Acerca de este tablero
+                <button onClick={() => setAboutModalShow(true)}>Acerca de este tablero</button>
+                <AboutModal
+                    show={aboutModalShow}
+                    onHide={() => setAboutModalShow(false)}
+                />
             </Nav.Item>
             <Nav.Item>
-                Cambiar de fondo
+                <button onClick={() => setChangeBackgroundModalShow(true)}>Cambiar de fondo</button>
+                <ChangeBackgroundModal
+                    show={changeBackgroundModalShow}
+                    onHide={() => setChangeBackgroundModalShow(false)}
+                />
             </Nav.Item>
             <Nav.Item>
-                Buscar Tarjetas
+                <button onClick={() => setSearchCardModalShow(true)}>Buscar Tarjeta</button>
+                <SearchCardModal
+                    show={searchCardModalShow}
+                    onHide={() => setSearchCardModalShow(false)}
+                />
             </Nav.Item>
             <Nav.Item>
-                Crear columna
+                <button onClick={() => setCreateColumShow(true)}>Crear Columna</button>
+                <CreateColumModal
+                    show={createColumShow}
+                    onHide={() => setCreateColumShow(false)}
+                />
             </Nav.Item>
             <Nav.Item>
-            <DropdownButton id="dropdown-item-button" title="Dropdown button">
-                <Dropdown.Item as="button">Action</Dropdown.Item>
-                <Dropdown.Item as="button">Another action</Dropdown.Item>
-                <Dropdown.Item as="button">Something else</Dropdown.Item>
-            </DropdownButton>
+                <button onClick={() => setDeleteColumShow(true)}>Borrar Columna</button>
+                <DeleteColumnModal
+                    show={deleteColumShow}
+                    onHide={() => setDeleteColumShow(false)}
+                />
             </Nav.Item>
             </Nav>
 

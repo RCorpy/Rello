@@ -8,6 +8,7 @@ import {Container, Row, Col} from 'react-bootstrap'
 function Screen(props){
     return (
         <div className="App">
+        
             <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">      
@@ -22,6 +23,7 @@ function Screen(props){
                     </Col> 
                 </Row>
             </Container>
+
 
             
         </div>

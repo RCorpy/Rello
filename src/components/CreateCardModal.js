@@ -37,7 +37,7 @@ function CreateCardModal(props) {
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" rows="3" onChange={handleTextAreaChange} value={cardBody}/>
           </Form.Group>
-          <Button variant="success" onClick={()=>{props.createCard(cardName, props.columnName, cardBody); props.onHide()}}>Create Card</Button>
+          <Button variant="success" onClick={()=>{props.createCard(cardName, props.columnIndex, cardBody); props.onHide()}}>Create Card</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
@@ -47,10 +47,10 @@ function CreateCardModal(props) {
   }
 
   const connectedCreateCardModal = connect(state => ({state:state}), (dispatch)=>({
-    createCard: (cardName, columnName, cardBody) => dispatch({
+    createCard: (cardName, columnIndex, cardBody) => dispatch({
         type: 'CREATE_CARD',
         cardName: cardName,
-        columnName: columnName,
+        columnIndex: columnIndex,
         cardBody: cardBody
     })
   }))(CreateCardModal)

@@ -88,21 +88,18 @@ function reducer(state = initialState, action){
 
         case 'CREATE_CARD':
             if(action.cardBody && action.cardName){
-                return state.map(element => {
-                if (element.title === action.columnName){
-                    return {
-                        ...element,
-                        cards:[
-                            ...element.cards,
-                            {
-                                header: action.cardName,
-                                body: action.cardBody
-                            }
-                        ]
-                    }
-                }
-                return element
-            })}
+                let toReturn = [...state]
+                toReturn[action.columnIndex].cards = [...state[action.columnIndex].cards.concat({header: action.cardName, body: action.cardBody})]
+                return toReturn
+            }
+            return state
+
+        case 'MODIFY_CARD':
+            if(action.cardBody && action.cardName){
+                let toReturn = [...state]
+                toReturn[action.columnIndex].cards[action.cardIndex] = {header: action.cardName, body: action.cardBody}
+                return toReturn
+            }
             return state
         default:
             return state

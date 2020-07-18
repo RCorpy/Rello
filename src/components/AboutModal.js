@@ -21,7 +21,6 @@ function AboutModal(props) {
           <p>Que falta aun?</p>
           <ul>
             <li>Implementar Drag and Drops</li>
-            <li>Reconfigurar la funcion de borrar las tarjetas haciendo las tarjetas modals?</li>
             <li>Poner funcionalidad a los modals del sidebar</li>
           </ul>
         </Modal.Body>

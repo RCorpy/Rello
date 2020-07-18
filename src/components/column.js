@@ -17,9 +17,20 @@ function Column(props){
             </div>
             <div className="cardContainer">
                 {props.state[props.index].cards.map((card, index) => 
-                    <span style={{ cursor: "pointer" }} onClick={()=> {setIndexForCardModal(index); setModifyCardModalShow(true)}}>
+                    <div
+                        draggable
+                        onDragStart={(e)=>e.dataTransfer.setData("initialPos", [props.index, index])}
+                        onDragOver={(e)=>e.preventDefault()}
+                        onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [props.index, index])}
+                        style={{ cursor: "pointer" }}
+                        onClick={()=> {
+                            setIndexForCardModal(index);
+                            setModifyCardModalShow(true)
+                            }
+                        }
+                    >
                         <Card key={index} columnIndex={props.index} cardIndex={index}  />
-                    </span>)}
+                    </div>)}
             </div>
             <div className="bottomTag" onClick={()=>setCreateModalShow(true)}>Añadir tarjeta +</div>
             <CreateModal
@@ -37,5 +48,11 @@ function Column(props){
     )
 }
 
-const connectedColumn = connect(state => ({state:state}), null)(Column)
+const connectedColumn = connect(state => ({state:state}), (dispatch)=>({
+    moveCard: (initialPos, finalPos) => dispatch({
+        type: "MOVE_CARD",
+        initialPos : [parseInt(initialPos.split(",")[0]), parseInt(initialPos.split(",")[1])],
+        finalPos: finalPos
+    })
+}))(Column)
 export default connectedColumn;

@@ -101,6 +101,16 @@ function reducer(state = initialState, action){
                 return toReturn
             }
             return state
+
+        case 'MOVE_CARD':
+            if(action.initialPos !== action.finalPos){
+                let toReturn = [...state]
+                let movedItem = toReturn[action.initialPos[0]].cards.splice(action.initialPos[1], 1)[0]
+                if (!toReturn[action.initialPos[0]].cards){ toReturn[action.initialPos[0]].cards = {}}
+                toReturn[action.finalPos[0]].cards.splice(action.finalPos[1],0,movedItem)
+                return toReturn
+            }
+            return state
         default:
             return state
     }

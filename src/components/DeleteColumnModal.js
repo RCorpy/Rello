@@ -1,7 +1,15 @@
-import React from 'react'
-import {Modal, Button} from 'react-bootstrap'
+import React, {useState} from 'react'
+import {Modal, Button, Form} from 'react-bootstrap'
+import {connect} from 'react-redux'
 
 function DeleteColumnModal(props) {
+
+    const [columnName, setColumnName] = useState("-")
+
+    const handleChange = (event) => {
+        setColumnName(event.target.value)
+        console.log(event)
+    }
     return (
       <Modal
         {...props}
@@ -11,16 +19,18 @@ function DeleteColumnModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Delete a Column
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+            Selected: {columnName}
+            <Form.Group>
+                <Form.Control as="select" size="lg" onChange={handleChange}>
+                    <option>-</option>
+                    {props.state.map(element => <option>{element.title}</option>)}
+                </Form.Control>
+            </Form.Group>
+            <Button variant="danger" onClick={()=>{props.deletecolumn(columnName)}}>Delete Column</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
@@ -29,4 +39,12 @@ function DeleteColumnModal(props) {
     );
   }
 
-  export default DeleteColumnModal
+  
+
+  const connectedDeleteColumnModal = connect(state => ({state:state}), (dispatch)=>({
+    deletecolumn: (columnName) => dispatch({
+        type: 'DELETE_COLUMN',
+        columnName: columnName
+    })
+  }))(DeleteColumnModal)
+  export default connectedDeleteColumnModal;

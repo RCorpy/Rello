@@ -20,9 +20,3 @@ function App(props) {
 
 export default App;
 
-
-// Hacer Boton de Crear Columna
-// Boton Crear Card
-// DONE - Boton Eliminar Card
-// Boton Eliminar Columna
-// Mover tarjetas

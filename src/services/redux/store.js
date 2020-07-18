@@ -80,10 +80,10 @@ function reducer(state = initialState, action){
             
         return toReturn
 
-        case '2':
-            return[
-                ...initialState
-            ]
+        case 'DELETE_COLUMN':
+
+            return [...state].filter(column => column.title !== action.columnName)
+
         default:
             console.log(state)
             return state

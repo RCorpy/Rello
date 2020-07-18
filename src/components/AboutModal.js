@@ -11,16 +11,19 @@ function AboutModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            El primer tablero de Rello
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
           <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
+            Pues parece que esta cosa mejora y avanza, que no? 
           </p>
+          <p>Que falta aun?</p>
+          <ul>
+            <li>Implementar Drag and Drops</li>
+            <li>Reconfigurar la funcion de borrar las tarjetas haciendo las tarjetas modals?</li>
+            <li>Poner funcionalidad a los modals del sidebar</li>
+          </ul>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

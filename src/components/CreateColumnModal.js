@@ -1,7 +1,15 @@
-import React from 'react'
-import {Modal, Button} from 'react-bootstrap'
+import React, {useState} from 'react'
+import {Modal, Button, Form} from 'react-bootstrap'
+import {connect} from 'react-redux'
 
-function CreateColumn(props) {
+function CreateColumnModal(props) {
+
+    const [columnName, setColumnName] = useState("")
+
+    const handleChange = (event) => {
+      setColumnName(event.target.value)
+    }
+
     return (
       <Modal
         {...props}
@@ -11,16 +19,18 @@ function CreateColumn(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Create new column
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>New column: {columnName}</Form.Label>
+            <Form.Control placeholder="Enter new column name" onChange={handleChange}/>
+            <Form.Text className="text-muted">
+              You probably wont be able to change it later!
+            </Form.Text>
+          </Form.Group>
+          <Button variant="success" onClick={()=>{props.createcolumn(columnName); props.onHide()}}>Create Column</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
@@ -29,4 +39,10 @@ function CreateColumn(props) {
     );
   }
 
-  export default CreateColumn
+  const connectedCreateColumnModal = connect(state => ({state:state}), (dispatch)=>({
+    createcolumn: (columnName) => dispatch({
+        type: 'CREATE_COLUMN',
+        columnName: columnName
+    })
+  }))(CreateColumnModal)
+  export default connectedCreateColumnModal;

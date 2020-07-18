@@ -81,11 +81,11 @@ function reducer(state = initialState, action){
         return toReturn
 
         case 'DELETE_COLUMN':
-
             return [...state].filter(column => column.title !== action.columnName)
 
+        case 'CREATE_COLUMN':
+            return( [...state].concat({title: action.columnName, cards: []}))
         default:
-            console.log(state)
             return state
     }
 }

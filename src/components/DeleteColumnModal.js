@@ -30,7 +30,7 @@ function DeleteColumnModal(props) {
                     {props.state.map(element => <option>{element.title}</option>)}
                 </Form.Control>
             </Form.Group>
-            <Button variant="danger" onClick={()=>{props.deletecolumn(columnName)}}>Delete Column</Button>
+            <Button variant="danger" onClick={()=>{props.deletecolumn(columnName); props.onHide()}}>Delete Column</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

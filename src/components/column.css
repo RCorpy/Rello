@@ -1,0 +1,17 @@
+.bottomTag {
+    position: absolute;
+    bottom:   0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.cardContainer{
+    height: 85vh;
+    
+}
+.col-sm{
+
+}

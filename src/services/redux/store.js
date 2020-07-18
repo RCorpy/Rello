@@ -62,9 +62,9 @@ const initialState = [
         {header:"Titulo2",
         body:"body2"
     },
-    {header:"Titulo2",
-    body:"body2"
-}
+        {header:"Titulo2",
+        body:"body2"
+    }
     ]
 },
 ]
@@ -85,6 +85,25 @@ function reducer(state = initialState, action){
 
         case 'CREATE_COLUMN':
             return( [...state].concat({title: action.columnName, cards: []}))
+
+        case 'CREATE_CARD':
+            if(action.cardBody && action.cardName){
+                return state.map(element => {
+                if (element.title === action.columnName){
+                    return {
+                        ...element,
+                        cards:[
+                            ...element.cards,
+                            {
+                                header: action.cardName,
+                                body: action.cardBody
+                            }
+                        ]
+                    }
+                }
+                return element
+            })}
+            return state
         default:
             return state
     }

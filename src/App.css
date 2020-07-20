@@ -3,3 +3,6 @@
   
 }
 
+.row {
+  flex-wrap: nowrap !important;  
+}

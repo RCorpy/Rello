@@ -1,8 +1,25 @@
 .screen .row{
-    flex: 1;
+    min-width: 80vw;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right:auto;
+    padding-left: 0;
+    overflow-x: auto;
     
 }
 
+
+
 .screen .container{
     display: flex;
+
+}
+
+.screen .container{
+    background-color: hotpink;
+}
+
+.container{
+    padding:0;
+    margin:0;
 }

@@ -1,5 +1,4 @@
 .bottomTag {
-    position: absolute;
     bottom:   0;
     margin-left: auto;
     margin-right: auto;
@@ -18,9 +17,9 @@
     border: 0.2em solid grey;
     
     margin: 5px;
-    min-height: 95vh;
-    max-height: 95vh;
-    
+    min-width: 300px !important;
+    max-width: 300px !important;
+
   }
   
   .card{
@@ -35,9 +34,7 @@
     overflow-y: hidden;
   }
   
-  .card-title{
-    
-  }
+
   
   .card-text{
     font-size: 0.8em;

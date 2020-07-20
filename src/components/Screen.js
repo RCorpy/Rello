@@ -15,12 +15,12 @@ function Screen(props){
                     <Col xs={2} id="sidebar-wrapper">      
                       <SideBar />
                     </Col>
-                    <Col  xs={10} id="page-content-wrapper">
-                    <div className="screen container">
-                        <div className="screen row">
-                            {props.state.map((column, index) => <Column index={index} key={index} column={column}/>)}
+                    <Col  xs={10}>
+                        <div className="screen">
+                            <div className="screen row">
+                                {props.state.map((column, index) => <Column index={index} key={index} column={column}/>)}
+                            </div>
                         </div>
-                    </div>
                     </Col> 
                 </Row>
             </Container>

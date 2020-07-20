@@ -15,7 +15,7 @@ function Column(props){
     const thisColumn = props.state[thisColumnIndex]
 
     return(
-        <div className="col-sm">
+        <div className="col-sm" >
             <div
                 className="column-title"
                 onDragOver={
@@ -41,7 +41,7 @@ function Column(props){
                     <div
                         draggable
                         onDragStart={(e)=>e.dataTransfer.setData("initialPos", [thisColumnIndex, index])}
-                        onDragOver={
+                        onDragOver={ 
                             (e)=>{
                                 e.preventDefault();
                                 setDragIndex(index)

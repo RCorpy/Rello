@@ -11,6 +11,9 @@ function Column(props){
     const [indexForCardmodal, setIndexForCardModal] = useState(0)
     const [dragIndex, setDragIndex] = useState(0)
 
+    const thisColumnIndex = props.index
+    const thisColumn = props.state[thisColumnIndex]
+
     return(
         <div className="col-sm">
             <div
@@ -21,10 +24,9 @@ function Column(props){
                         setDragIndex(0)
                     }
                 }
-                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [props.index, dragIndex])}
+                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [thisColumnIndex, dragIndex])}
             >
-                {props.state[props.index].title}
-                {dragIndex}
+                {thisColumn.title}
             </div>
             <div
                 className="cardContainer"
@@ -33,12 +35,12 @@ function Column(props){
                         e.preventDefault();
                     }
                 }
-                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [props.index, dragIndex])}
+                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [thisColumnIndex, dragIndex])}
             >
-                {props.state[props.index].cards.map((card, index) => 
+                {thisColumn.cards.map((card, index) => 
                     <div
                         draggable
-                        onDragStart={(e)=>e.dataTransfer.setData("initialPos", [props.index, index])}
+                        onDragStart={(e)=>e.dataTransfer.setData("initialPos", [thisColumnIndex, index])}
                         onDragOver={
                             (e)=>{
                                 e.preventDefault();
@@ -53,7 +55,7 @@ function Column(props){
                         }
                         key={index}
                     >
-                        <Card  columnIndex={props.index} cardIndex={index}  />
+                        <Card  columnIndex={thisColumnIndex} cardIndex={index}  />
                     </div>)}
             </div>
             <div
@@ -62,22 +64,22 @@ function Column(props){
                 onDragOver={
                     (e)=>{
                         e.preventDefault();
-                        setDragIndex(props.state[props.index].cards.length)
+                        setDragIndex(thisColumn.cards.length)
                     }
                 }
-                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [props.index, dragIndex])}
+                onDrop={(e)=>props.moveCard(e.dataTransfer.getData("initialPos"), [thisColumnIndex, dragIndex])}
             >
                 Añadir tarjeta +
             </div>
             <CreateModal
                 show={createModalShow}
                 onHide={() => setCreateModalShow(false)}
-                columnIndex={props.index}
+                columnIndex={thisColumnIndex}
             />
             <ModifyCardModal
                 show={modifyCardModalShow}
                 onHide={() => setModifyCardModalShow(false)}
-                columnindex={props.index}
+                columnindex={thisColumnIndex}
                 cardindex={indexForCardmodal}
             />
          </div>

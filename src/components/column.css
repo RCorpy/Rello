@@ -10,6 +10,7 @@
 
 .cardContainer{
     height: 85vh;
+    overflow-y: auto;
     
 }
 .col-sm{
@@ -19,7 +20,7 @@
     margin: 5px;
     min-height: 95vh;
     max-height: 95vh;
-    overflow-y: auto;
+    
   }
   
   .card{

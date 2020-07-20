@@ -21,41 +21,41 @@ const Sidebar = props => {
 
             <Nav className="col-md-12 d-none d-md-block bg-light sidebar">
                 <div className="sidebar-sticky"></div>
-            <Nav.Item>
-                <button onClick={() => setAboutModalShow(true)}>Acerca de este tablero</button>
-                <AboutModal
-                    show={aboutModalShow}
-                    onHide={() => setAboutModalShow(false)}
-                />
-            </Nav.Item>
-            <Nav.Item>
-                <button onClick={() => setChangeBackgroundModalShow(true)}>Cambiar de fondo</button>
-                <ChangeBackgroundModal
-                    show={changeBackgroundModalShow}
-                    onHide={() => setChangeBackgroundModalShow(false)}
-                />
-            </Nav.Item>
-            <Nav.Item>
-                <button onClick={() => setSearchCardModalShow(true)}>Buscar Tarjeta</button>
-                <SearchCardModal
-                    show={searchCardModalShow}
-                    onHide={() => setSearchCardModalShow(false)}
-                />
-            </Nav.Item>
-            <Nav.Item>
-                <button onClick={() => setCreateColumShow(true)}>Crear Columna</button>
-                <CreateColumModal
-                    show={createColumShow}
-                    onHide={() => setCreateColumShow(false)}
-                />
-            </Nav.Item>
-            <Nav.Item>
-                <button onClick={() => setDeleteColumShow(true)}>Borrar Columna</button>
-                <DeleteColumnModal
-                    show={deleteColumShow}
-                    onHide={() => setDeleteColumShow(false)}
-                />
-            </Nav.Item>
+                <Nav.Item className="sidebarcontainer">
+                    <button className="sidebaritem" onClick={() => setAboutModalShow(true)}>Acerca de este tablero</button>
+                    <AboutModal
+                        show={aboutModalShow}
+                        onHide={() => setAboutModalShow(false)}
+                    />
+                </Nav.Item>
+                <Nav.Item className="sidebarcontainer">
+                    <button className="sidebaritem" onClick={() => setChangeBackgroundModalShow(true)}>Cambiar de fondo</button>
+                    <ChangeBackgroundModal
+                        show={changeBackgroundModalShow}
+                        onHide={() => setChangeBackgroundModalShow(false)}
+                    />
+                </Nav.Item>
+                <Nav.Item className="sidebarcontainer">
+                    <button className="sidebaritem" onClick={() => setSearchCardModalShow(true)}>Buscar Tarjeta</button>
+                    <SearchCardModal
+                        show={searchCardModalShow}
+                        onHide={() => setSearchCardModalShow(false)}
+                    />
+                </Nav.Item>
+                <Nav.Item className="sidebarcontainer">
+                    <button className="sidebaritem" onClick={() => setCreateColumShow(true)}>Crear Columna</button>
+                    <CreateColumModal
+                        show={createColumShow}
+                        onHide={() => setCreateColumShow(false)}
+                    />
+                </Nav.Item>
+                <Nav.Item className="sidebarcontainer">
+                    <button className="sidebaritem" onClick={() => setDeleteColumShow(true)}>Borrar Columna</button>
+                    <DeleteColumnModal
+                        show={deleteColumShow}
+                        onHide={() => setDeleteColumShow(false)}
+                    />
+                </Nav.Item>
             </Nav>
 
         </>

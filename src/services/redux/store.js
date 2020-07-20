@@ -1,72 +1,36 @@
 import {createStore} from 'redux'
 
 const initialState = [
-    {title: "column1",
+    {title: "To Do",
     cards: [
-        {header:"Titulo1",
+        {header:"Task1",
         body:"body1"
     },
-        {header:"Titulo2",
+        {header:"Task2",
             body:"body2"
         }
     ]
 },
-    {title: "column2",
+    {title: "Doing",
     cards: [
-        {header:"Titulo3",
+        {header:"Doing1",
         body:"body3"
     },
-        {header:"Titulo4",
+        {header:"Doing2",
             body:"body4"
         }
     ]
 },
-{title: "column1",
+{title: "Done",
     cards: [
-        {header:"Titulo1",
+        {header:"Finished 1",
         body:"body1"
     },
-        {header:"Titulo2",
+        {header:"Finished 2",
             body:"body2"
         }
     ]
-},
-{title: "column1",
-    cards: [
-        {header:"Titulo1",
-        body:"body1"
-    },
-        {header:"Titulo2",
-            body:"body2"
-        }
-    ]
-},
-{title: "column1",
-    cards: [
-        {header:"Titulo1",
-        body:"body1"
-    },
-        {header:"Titulo2",
-            body:"body2"
-        }
-    ]
-},
-{title: "column1",
-    cards: [
-        {header:"Titulo1",
-        body:"body1"
-    },
-        {header:"Titulo2",
-            body:"body2"
-        },
-        {header:"Titulo2",
-        body:"body2"
-    },
-        {header:"Titulo2",
-        body:"body2"
-    }
-    ]
-},
+}
 ]
 
 function reducer(state = initialState, action){

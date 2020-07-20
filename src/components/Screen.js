@@ -3,6 +3,7 @@ import Column from './column'
 import {connect} from 'react-redux'
 import SideBar from './SideBar'
 import {Container, Row, Col} from 'react-bootstrap'
+import './screen.css'
 
 
 function Screen(props){
@@ -15,8 +16,8 @@ function Screen(props){
                       <SideBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                    <div className="container">
-                        <div className="row">
+                    <div className="screen container">
+                        <div className="screen row">
                             {props.state.map((column, index) => <Column index={index} key={index} column={column}/>)}
                         </div>
                     </div>

@@ -1,0 +1,8 @@
+.screen .row{
+    flex: 1;
+    
+}
+
+.screen .container{
+    display: flex;
+}

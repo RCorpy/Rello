@@ -13,5 +13,32 @@
     
 }
 .col-sm{
-
-}
+    border-radius: 1em;
+    border: 0.2em solid grey;
+    
+    margin: 5px;
+    min-height: 95vh;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  
+  .card{
+    margin-top: 0.6em;
+  }
+  
+  .card-body{
+    padding:1em;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+  }
+  
+  .card-title{
+    
+  }
+  
+  .card-text{
+    font-size: 0.8em;
+    text-align: left;
+  }

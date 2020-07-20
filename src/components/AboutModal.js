@@ -20,8 +20,8 @@ function AboutModal(props) {
           </p>
           <p>Que falta aun?</p>
           <ul>
-            <li>Implementar Drag and Drops</li>
-            <li>Poner funcionalidad a los modals del sidebar</li>
+            <li>Mejorar el CSS</li>
+            <li>Poner funcionalidad a BUSCAR TARJETA y CAMBIAR FONDO</li>
           </ul>
         </Modal.Body>
         <Modal.Footer>

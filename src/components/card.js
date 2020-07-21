@@ -12,8 +12,6 @@ function Card(props){
         <div className="card w-100">
             <div className="card-body">
                 <h5 className="card-title">{getCardFromColumn().header}</h5>
-                <p className="card-text">{getCardFromColumn().body}</p>
-                {JSON.stringify(getCardFromColumn(), null, 2)}
             </div>
         </div>
     )

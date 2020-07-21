@@ -15,6 +15,13 @@ function CreateCardModal(props) {
         setCardBody(event.target.value)
     }
 
+    const handleCreateCard = () => {
+      props.createCard(cardName, props.columnIndex, cardBody); 
+      props.onHide()
+      setCardName("")
+      setCardBody("")
+    }
+
     return (
       <Modal
         {...props}
@@ -30,14 +37,14 @@ function CreateCardModal(props) {
         <Modal.Body>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>New Card: {cardName}</Form.Label>
-            <Form.Control placeholder="Enter new card name" onChange={handleChange}/>
+            <Form.Control placeholder="Enter new card name" onChange={handleChange} value={cardName}/>
             <Form.Text className="text-muted">
               You probably wont be able to change it later!
             </Form.Text>
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" rows="3" onChange={handleTextAreaChange} value={cardBody}/>
           </Form.Group>
-          <Button variant="success" onClick={()=>{props.createCard(cardName, props.columnIndex, cardBody); props.onHide()}}>Create Card</Button>
+          <Button variant="success" onClick={()=>{handleCreateCard()}}>Create Card</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

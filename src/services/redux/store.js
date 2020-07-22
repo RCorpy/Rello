@@ -4,30 +4,36 @@ const initialState = [
     {title: "To Do",
     cards: [
         {header:"Task1",
-        body:"body1"
+        body:"body1",
+        chip:"Concern"
     },
         {header:"Task2",
-            body:"body2"
+            body:"body2",
+            chip: "None"
         }
     ]
 },
     {title: "Doing",
     cards: [
         {header:"Doing1",
-        body:"body3"
+        body:"body3",
+        chip:"Spike"
     },
         {header:"Doing2",
-            body:"body4"
+            body:"body4",
+            chip:"None"
         }
     ]
 },
 {title: "Done",
     cards: [
         {header:"Finished 1",
-        body:"body1"
+        body:"body1",
+        chip:"None"
     },
         {header:"Finished 2",
-            body:"body2"
+            body:"body2",
+            chip: "None"
         }
     ]
 }
@@ -72,6 +78,14 @@ function reducer(state = initialState, action){
                 let movedItem = toReturn[action.initialPos[0]].cards.splice(action.initialPos[1], 1)[0]
                 if (!toReturn[action.initialPos[0]].cards){ toReturn[action.initialPos[0]].cards = {}}
                 toReturn[action.finalPos[0]].cards.splice(action.finalPos[1],0,movedItem)
+                return toReturn
+            }
+            return state
+        
+        case 'CHANGE_CARD_CHIP':
+            if(state[action.columnIndex].cards[action.cardIndex].chip !== action.cardChip){
+                let toReturn = [...state]
+                toReturn[action.columnIndex].cards[action.cardIndex].chip = action.cardChip
                 return toReturn
             }
             return state

@@ -6,3 +6,16 @@
 .row {
   flex-wrap: nowrap !important;  
 }
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 15px;
+  width: 100px;
+  margin-top:5px;
+  margin-left: 5px;
+  font-size: 10px;
+  line-height: 15px;
+  border-radius: 25px;
+  background-color: lightgrey;
+}

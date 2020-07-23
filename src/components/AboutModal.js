@@ -22,6 +22,9 @@ function AboutModal(props) {
           <ul>
             <li>Mejorar el CSS</li>
             <li>Poner funcionalidad a BUSCAR TARJETA y CAMBIAR FONDO</li>
+            <li>Hay un bug al eliminar la ultima tarjeta de una columna</li>
+            <li>Separar un poco los botones de modifycardmodal</li>
+            <li>Darle a cada Card una sombra</li>
           </ul>
         </Modal.Body>
         <Modal.Footer>

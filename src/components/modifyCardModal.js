@@ -25,7 +25,8 @@ function ModifyCardModal(props) {
 
     useEffect(()=>{
       let thisColumn = props.state[props.columnindex]
-      if(thisColumn.cards[0]){
+      
+      if(thisColumn.cards.length>props.cardindex){
         setCardName(thisColumn.cards[props.cardindex].header)
         setCardBody(thisColumn.cards[props.cardindex].body)
         setCardChip(thisColumn.cards[props.cardindex].chip)
@@ -41,7 +42,7 @@ function ModifyCardModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modify a Card {cardChip}
+            Modify a Card
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

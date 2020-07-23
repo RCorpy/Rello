@@ -76,7 +76,7 @@ The internal state of each column will change when you hover with a card over it
 
 ## Known bugs
 
-There is a possibility of selecting multiple cards at the same time, after moving all of them at one into a valid drop zone the program will collapse
+FIXED? There is a possibility of selecting multiple cards at the same time, after moving all of them at one into a valid drop zone the program will collapse
 
 ## Next steps
 
@@ -84,4 +84,4 @@ There is a possibility of selecting multiple cards at the same time, after movin
 - CSS can be improved
 - Should be able to change the positions of full columns
 - Backend with database to save the progress, maybe even add users
-- Tags could be added to categorize the cards
+- DONE! Tags could be added to categorize the cards

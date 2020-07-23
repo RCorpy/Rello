@@ -41,6 +41,7 @@ function Column(props){
                 {thisColumn.cards.map((card, index) => 
                     <div
                         draggable
+                        className="oneCard"
                         onDragStart={(e)=>e.dataTransfer.setData("initialPos", [thisColumnIndex, index])}
                         onDragOver={ 
                             (e)=>{
@@ -48,7 +49,6 @@ function Column(props){
                                 setDragIndex(index)
                             }
                         }
-                        style={{ cursor: "pointer" }}
                         onClick={()=> {
                             setIndexForCardModal(index);
                             setModifyCardModalShow(true)

@@ -57,9 +57,11 @@ function ModifyCardModal(props) {
           </Form.Group>
           <div className="buttonBox">
             <div>
-            <Button variant="warning" onClick={()=>{props.modifycard(props.columnindex, props.cardindex, cardName, cardBody ); props.onHide()}}>Modify Card</Button>
-            <ChipSelector active={cardChip} handleChipChange={handleChipChange}/>
-            </div>
+              <div class="modifyButton">
+                <Button variant="warning" onClick={()=>{props.modifycard(props.columnindex, props.cardindex, cardName, cardBody ); props.onHide()}}>Modify Card</Button>
+              </div>
+              <ChipSelector active={cardChip} handleChipChange={handleChipChange}/>
+              </div>
             <Button variant="danger" onClick={()=>{props.deletecard(props.columnindex, props.cardindex); props.onHide()}}>Delete Card</Button>
           </div>
         </Modal.Body>

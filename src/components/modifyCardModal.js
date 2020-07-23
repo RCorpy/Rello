@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Modal, Button, Form} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import ChipSelector from './ChipSelector'
+import './ModifyCardModal.css'
 
 function ModifyCardModal(props) {
 
@@ -53,9 +54,13 @@ function ModifyCardModal(props) {
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" rows="3" onChange={handleTextAreaChange} value={cardBody}/>
           </Form.Group>
-          <Button variant="warning" onClick={()=>{props.modifycard(props.columnindex, props.cardindex, cardName, cardBody ); props.onHide()}}>Modify Card</Button>
-          <Button variant="danger" onClick={()=>{props.deletecard(props.columnindex, props.cardindex); props.onHide()}}>Delete Card</Button>
-          <ChipSelector active={cardChip} handleChipChange={handleChipChange}/>
+          <div className="buttonBox">
+            <div>
+            <Button variant="warning" onClick={()=>{props.modifycard(props.columnindex, props.cardindex, cardName, cardBody ); props.onHide()}}>Modify Card</Button>
+            <ChipSelector active={cardChip} handleChipChange={handleChipChange}/>
+            </div>
+            <Button variant="danger" onClick={()=>{props.deletecard(props.columnindex, props.cardindex); props.onHide()}}>Delete Card</Button>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

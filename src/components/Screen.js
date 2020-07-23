@@ -19,7 +19,7 @@ function Screen(props){
                         <div className="screen">
                             <div className="screen row">
                                 {props.state.map((column, index) =>(
-                                <div className="testingnow">
+                                <div>
                                     <Column index={index} key={index} column={column}/>
                                 </div>
                                 ))}

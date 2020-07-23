@@ -17,6 +17,7 @@ function Column(props){
     return(
         <div className="col-sm" >
             <div
+                
                 className="column-title"
                 onDragOver={
                     (e)=>{
@@ -61,6 +62,7 @@ function Column(props){
             <div
                 className="bottomTag"
                 onClick={()=>setCreateModalShow(true)}
+                style={{ cursor: "pointer" }}
                 onDragOver={
                     (e)=>{
                         e.preventDefault();

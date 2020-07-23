@@ -18,9 +18,16 @@
 }
 
 .sidebaritem{
-    
+    border-radius: 1em;
+    border-width: 0.16em;
     flex: 1;
+    border-color: rgba(236,236,236, .7);
+    margin-top: 0.5em;
+    padding: 0.7em 0 ;
+    outline-style: none !important;
 }
+
+
 #sidebar-wrapper{
     min-height: 99.6vh !important;
     width: 100vw;

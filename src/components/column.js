@@ -56,7 +56,7 @@ function Column(props){
                         }
                         key={index}
                     >
-                        <Card  columnIndex={thisColumnIndex} cardIndex={index}  />
+                        <Card columnIndex={thisColumnIndex} cardIndex={index}  />
                     </div>)}
             </div>
             <div

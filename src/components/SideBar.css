@@ -1,4 +1,12 @@
+:root{
+    --color__light: #ffda79;
+    --color__dark: #ccae62;
+    --color__secondary: #ffb142;
+}
+
+
 .sidebar {
+    background-color: var(--color__light);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -11,6 +19,7 @@
 }
 
 .sidebarcontainer{
+    
     display: flex;
     margin: 0.2em 1em;
     margin-right: 0;
@@ -18,10 +27,13 @@
 }
 
 .sidebaritem{
+    background-color: var(--color__dark);
     border-radius: 1em;
     border-width: 0.16em;
     flex: 1;
-    border-color: rgba(236,236,236, .7);
+    color: white;
+    font-weight: 700;
+    border-color: lightgrey;
     margin-top: 0.5em;
     padding: 0.7em 0 ;
     outline-style: none !important;

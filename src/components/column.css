@@ -1,3 +1,5 @@
+:root{--card__radius:10px}
+
 .bottomTag {
     bottom:   0;
     margin-left: auto;
@@ -16,13 +18,16 @@
 }
 
 .oneCard{
+  border-radius: var(--card__radius);
   box-shadow: 2px 2px 5px #999;
   cursor: pointer;
   margin: 5px;
 }
+
+
 .col-sm{
     border-radius: 1em;
-    border: 0.2em solid grey;
+    border: 1px solid lightgrey;
     
     margin: 5px;
     min-width: 300px !important;
@@ -35,6 +40,8 @@
   }
   
   .card-body{
+    
+    border-radius: var(--card__radius);
     padding:1em;
     max-height: 150px;
     display: flex;
@@ -47,4 +54,10 @@
   .card-text{
     font-size: 0.8em;
     text-align: left;
+  }
+
+  .w-100{
+    
+    border-radius: var(--card__radius) !important;
+
   }

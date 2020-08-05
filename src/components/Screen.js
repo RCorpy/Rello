@@ -12,10 +12,10 @@ function Screen(props){
         
             <Container fluid>
                 <Row>
-                    <Col xs={2} id="sidebar-wrapper">      
+                    <Col id="sidebar-wrapper">      
                       <SideBar />
                     </Col>
-                    <Col  xs={10}>
+                    <Col >
                         <div className="screen">
                             <div className="screen row">
                                 {props.state.map((column, index) =>(

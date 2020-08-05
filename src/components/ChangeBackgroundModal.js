@@ -2,6 +2,29 @@ import React from 'react'
 import {Modal, Button} from 'react-bootstrap'
 
 function ChangeBackgroundModal(props) {
+
+    const setDefault = {
+      '--color__dark': "white",
+      '--color__light': 'white',
+      '--color__secondary': 'white',
+      '--color__text':'black'
+    }
+
+    const setOne = {
+      '--color__dark': "#ccae62",
+      '--color__light': '#ffda79',
+      '--color__secondary': '#ffb142',
+      '--color__text':'white'
+  }
+
+    const cssProperty = document.documentElement.style
+    const setColors = (setOne) => {
+
+      for(const variable in setOne){
+        cssProperty.setProperty(variable, setOne[variable] )
+      }
+    }
+
     return (
       <Modal
         {...props}
@@ -11,16 +34,14 @@ function ChangeBackgroundModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Change Colors
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+
+          <button onClick={()=>setColors(setOne)}>weird colors</button>
+          <button onClick={()=>setColors(setDefault)}>default colors</button>
+
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

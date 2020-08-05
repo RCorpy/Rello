@@ -1,7 +1,8 @@
 :root{
-    --color__light: #ffda79;
-    --color__dark: #ccae62;
-    --color__secondary: #ffb142;
+    --color__light: white;
+    --color__dark: white;
+    --color__secondary: white;
+    --color__text:black;
 }
 
 
@@ -31,7 +32,7 @@
     border-radius: 1em;
     border-width: 0.16em;
     flex: 1;
-    color: white;
+    color: var(--color__text);
     font-weight: 700;
     border-color: lightgrey;
     margin-top: 0.5em;

@@ -76,12 +76,11 @@ The internal state of each column will change when you hover with a card over it
 
 ## Known bugs
 
-FIXED? There is a possibility of selecting multiple cards at the same time, after moving all of them at one into a valid drop zone the program will collapse
+All known bugs are fixed at the moment
 
 ## Next steps
 
 - SideBar still lacks functionality in Change Background and Search Card Buttons
-- CSS can be improved
+- CSS can be improved, make palletes for different colors
 - Should be able to change the positions of full columns
 - Backend with database to save the progress, maybe even add users
-- DONE! Tags could be added to categorize the cards

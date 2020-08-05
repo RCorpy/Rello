@@ -10,12 +10,12 @@ function Screen(props){
     return (
         <div className="App">
         
-            <Container fluid>
-                <Row>
-                    <Col id="sidebar-wrapper">      
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="sidebar-wrapper" class="col-2">      
                       <SideBar />
-                    </Col>
-                    <Col >
+                    </div>
+                    <div class="col-10" >
                         <div className="screen">
                             <div className="screen row">
                                 {props.state.map((column, index) =>(
@@ -25,9 +25,9 @@ function Screen(props){
                                 ))}
                             </div>
                         </div>
-                    </Col> 
-                </Row>
-            </Container>
+                    </div> 
+                </div>
+            </div>
 
 
             

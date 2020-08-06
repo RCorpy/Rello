@@ -3,13 +3,11 @@
 
 .sidebar {
     background-color: var(--color__light);
-    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     min-height: 99.6vh !important;
     z-index: 100;
-    padding:0 0 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     
 }
@@ -17,12 +15,13 @@
 .sidebarcontainer{
     
     display: flex;
-    margin: 0.2em 1em;
-    margin-right: 0;
+    margin: 0.2em;
+
 
 }
 
 .sidebaritem{
+    margin: 0 10px;
     background-color: var(--color__dark);
     border-radius: 1em;
     border-width: 0.16em;
@@ -31,22 +30,14 @@
     font-weight: 700;
     border-color: lightgrey;
     margin-top: 0.5em;
-    padding: 0.7em 0 ;
+    padding: 0.7em;
     outline-style: none !important;
 }
 
 
-#sidebar-wrapper{
-    min-height: 99.6vh !important;
-    width: 100vw;
-    margin-left: -1rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-}
+
 #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
+    padding: 1rem;
     font-size: 1.2rem;
 }
 
@@ -55,3 +46,21 @@
     width: 100%;
 }
 
+.screencontainer{
+    width: 100%;
+}
+
+#sidebar-wrapper{
+    min-height: 99.6vh !important;
+    width: 15%;
+    float: left;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+.cardcols{
+    width: 85%;
+    float: left;
+}
